@@ -108,7 +108,7 @@ router.post('/resend', function (req, res, next){
  
             // Send the email
             var transporter = nodemailer.createTransport({ service: 'Sendgrid', auth: {
-             user: 'doityesari2017@gmail.com', pass: 'yesarido2017' } });
+             user: 'youremail@gmail.com', pass: 'your password' } });
             var mailOptions = { from: 'no-reply@codemoto.io', to: user.email, subject: 'Account Verification Token', text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host + '\/confirmation\/' + token.token + '.\n' };
             transporter.sendMail(mailOptions, function (err) {
                 if (err) { return res.status(500).send({ msg: err.message }); }
